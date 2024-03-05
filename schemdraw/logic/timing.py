@@ -129,6 +129,7 @@ class TimingDiagram(Element):
         'risetime': 0.15,
         'fontsize': 12,
         'nodesize': 8,
+        'datasize': 11,
         'namecolor': 'blue',
         'datacolor': None,  # Inherit
         'nodecolor': None,  # Inherit
@@ -144,6 +145,7 @@ class TimingDiagram(Element):
         self.risetime = self.params['risetime']
         self.fontsize = self.params['fontsize']
         self.nodesize = self.params['nodesize']
+        self.datasize = self.params['datasize']
         self.namecolor = self.params['namecolor']
         self.datacolor = self.params['datacolor']  # default: get color from theme
         self.nodecolor = self.params['nodecolor']
@@ -250,6 +252,7 @@ class TimingDiagram(Element):
                       'y1': y1,
                       'rise': waverise if waverise is not None else self.risetime,
                       'data': data,
+                      'datasize': self.datasize,
                       'datacolor': self.datacolor,
                       'kwargs': wavekwargs}
 

@@ -111,6 +111,7 @@ class Wave0:
         self.yhalf = (self.y0 + self.y1)/2
         self.xcenter = (self.x0 + self.xend)/2
         self.xtext = self.xcenter + self.rise / 2
+        self.datasize = self.params.get('datasize', 11)
         self.kwargs = self.params.get('kwargs', {'lw': 1})
 
     def verts_in(self) -> list[tuple[float, float]]:
@@ -311,7 +312,7 @@ class WaveV(Wave0):
         if self.params.get('data', None) and self.params.get('state', None) != 'x':
             segments.append(SegmentText((self.xtext, self.yhalf), self.params['data'][0],
                                         color=self.params['datacolor'],
-                                        fontsize=11, align=('center', 'center')))
+                                        fontsize=self.datasize, align=('center', 'center')))
             self.params['data'].pop(0)
         return segments
 
