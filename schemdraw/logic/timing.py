@@ -487,7 +487,7 @@ class TimingDiagram(Element):
 
             if label:
                 w, h, _ = text_size(label, size=self.nodesize)
-                w, h = w*PTS_TO_UNITS*1.5, h*PTS_TO_UNITS*1.5
+                w, h = w*PTS_TO_UNITS*1.1, h*PTS_TO_UNITS*1.1
                 self.segments.append(SegmentPoly([(center.x-w/2, center.y-h/2),
                                                   (center.x-w/2, center.y+h/2),
                                                   (center.x+w/2, center.y+h/2),
